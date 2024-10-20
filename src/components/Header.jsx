@@ -3,7 +3,7 @@ import { Flex, Heading, Link, Box } from '@chakra-ui/react';
 const Header = ({ setCurrentSection }) => {
   return (
     <Flex as="header" bg="gray.700" color="white" p="4" justify="space-between" align="center">
-      <Heading size="lg">My Portfolio</Heading>
+      <Heading size="lg">Wendy Xiao</Heading>
       <Box>
         <Link onClick={() => setCurrentSection('AboutMe')} mx="2" _hover={{ color: 'teal.400' }}>
           About Me
@@ -23,4 +23,5 @@ const Header = ({ setCurrentSection }) => {
 };
 
 export default Header;
+
 
