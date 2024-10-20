@@ -1,43 +1,26 @@
-import { useState } from 'react';
-import BucketForm from './BucketForm';
+import { Flex, Heading, Link, Box } from '@chakra-ui/react';
 
-function Bucket(props) {
-  const [edit, setEdit] = useState({
-    id: null,
-    value: '',
-    eagerness: '',
-  });
+const Header = ({ setCurrentSection }) => {
+  return (
+    <Flex as="header" bg="gray.700" color="white" p="4" justify="space-between" align="center">
+      <Heading size="lg">My Portfolio</Heading>
+      <Box>
+        <Link onClick={() => setCurrentSection('AboutMe')} mx="2" _hover={{ color: 'teal.400' }}>
+          About Me
+        </Link>
+        <Link onClick={() => setCurrentSection('Portfolio')} mx="2" _hover={{ color: 'teal.400' }}>
+          Portfolio
+        </Link>
+        <Link onClick={() => setCurrentSection('Contact')} mx="2" _hover={{ color: 'teal.400' }}>
+          Contact
+        </Link>
+        <Link onClick={() => setCurrentSection('Resume')} mx="2" _hover={{ color: 'teal.400' }}>
+          Resume
+        </Link>
+      </Box>
+    </Flex>
+  );
+};
 
-  console.log(props.bucket);
+export default Header;
 
-  const submitUpdate = (value) => {
-    props.editBucketItem(edit.id, value);
-    setEdit({ id: null, value: '', eagerness: '' });
-  };
-
-  if (edit.id) {
-    return <BucketForm edit={edit} onSubmit={submitUpdate} />;
-  }
-
-  return props.bucket.map((item, i) => (
-    <div
-      className={
-        item.isComplete
-          ? `bucket-row complete ${item.eagerness}`
-          : `bucket-row ${item.eagerness}`
-      }
-      key={i}
-    >
-      <div key={item.id} onClick={() => props.completeBucketItem(item.id)}>
-        {item.text}
-      </div>
-      <div className="icons">
-        {console.log(item)}
-        <p onClick={() => setEdit({ id: item.id, value: item.text, eagerness: item.eagerness })}> ✏️</p>
-        <p onClick={() => props.removeBucketItem(item.id)}> 🗑️</p>
-      </div>
-    </div>
-  ));
-}
-
-export default Bucket;
