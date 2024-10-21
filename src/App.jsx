@@ -13,8 +13,11 @@ import {
   Textarea,
   Button,
   VStack,
-  useToast
+  useToast,
+  Icon,
+  HStack
 } from '@chakra-ui/react';
+import { FaExternalLinkAlt, FaGithub } from 'react-icons/fa';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
@@ -59,7 +62,8 @@ const App = () => {
               About Me
             </Heading>
             <Text fontSize="lg" textAlign="center" mb="6">
-              I'm a passionate web developer with expertise in building dynamic and interactive web applications using React.
+            Experienced professional with 8 years Product & Technology background in Tech industry. Worked in multiple roles as Data Analyst, Commerical Manager, Product Owner and Technical Program lead, now a Bootcamp graduated full stack web developer with experience in technologies : JavaScript, Node, React and more. 
+
             </Text>
             <Image
               borderRadius="full"
@@ -78,7 +82,6 @@ const App = () => {
               Portfolio
             </Heading>
             <SimpleGrid columns={2} spacing={10}>
-              {/* Each project box */}
               <Box
                 bg="orange.300"
                 p="6"
@@ -90,17 +93,17 @@ const App = () => {
                 _hover={{ transform: 'scale(1.05)', boxShadow: 'xl' }}
               >
                 <Heading as="h3" size="md" mb="4">
-                  Project 1
+                  CineJournal
                 </Heading>
-                <Text>Project description goes here...</Text>
-                <Box>
-                  <Link href="https://cinejournal-webapp.onrender.com/" color="white" isExternal mr="4">
-                    Live Page
+                <Text mb="4">CineJournal is a digital journal to track your viewing history of Movies & Television Shows that you watch across multiple platforms.</Text>
+                <HStack spacing={4}>
+                  <Link href="https://cinejournal-webapp.onrender.com/" isExternal >
+                    <Icon as={FaExternalLinkAlt} w={6} h={6} color="white"/>
                   </Link>
-                  <Link href="https://github.com/kevinvongmany/cinejournal-webapp" color="white" isExternal>
-                    GitHub Repo
+                  <Link href="https://github.com/kevinvongmany/cinejournal-webapp" isExternal>
+                    <Icon as={FaGithub} w={6} h={6} color="white" />
                   </Link>
-                </Box>
+                </HStack>
               </Box>
               <Box
                 bg="orange.300"
@@ -109,13 +112,68 @@ const App = () => {
                 boxShadow="lg"
                 textAlign="center"
                 maxW="300px"
+                transition="transform 0.2s, box-shadow 0.2s"
+                _hover={{ transform: 'scale(1.05)', boxShadow: 'xl' }}
               >
                 <Heading as="h3" size="md" mb="4">
-                  Project 2
+                  TechBlog
                 </Heading>
-                <Text>Project description goes here...</Text>
+                <Text mb="4">TechBlog is a CMS-style blog site where developers can publish their blog posts and comment on other developers’ posts as well.</Text>
+                <HStack spacing={4}>
+                  <Link href="https://techblog-ch3e.onrender.com/" isExternal >
+                    <Icon as={FaExternalLinkAlt} w={6} h={6} color="white"/>
+                  </Link>
+                  <Link href="https://github.com/Wendyydxiao/wx-techblog" isExternal>
+                    <Icon as={FaGithub} w={6} h={6} color="white" />
+                  </Link>
+                </HStack>
               </Box>
-              {/* Add more project boxes as needed */}
+              <Box
+                bg="orange.300"
+                p="6"
+                borderRadius="lg"
+                boxShadow="lg"
+                textAlign="center"
+                maxW="300px"
+                transition="transform 0.2s, box-shadow 0.2s"
+                _hover={{ transform: 'scale(1.05)', boxShadow: 'xl' }}
+              >
+                <Heading as="h3" size="md" mb="4">
+                  TextEditor
+                </Heading>
+                <Text mb="4">Just Another Text Editor (J.A.T.E) is a Progressive Web Application (PWA) that functions as a text editor, capable of working both online and offline.</Text>
+                <HStack spacing={4}>
+                  <Link href="https://texteditor-zz7z.onrender.com" isExternal >
+                    <Icon as={FaExternalLinkAlt} w={6} h={6} color="white"/>
+                  </Link>
+                  <Link href="https://github.com/Wendyydxiao/texteditor" isExternal>
+                    <Icon as={FaGithub} w={6} h={6} color="white" />
+                  </Link>
+                </HStack>
+              </Box>
+              <Box
+                bg="orange.300"
+                p="6"
+                borderRadius="lg"
+                boxShadow="lg"
+                textAlign="center"
+                maxW="300px"
+                transition="transform 0.2s, box-shadow 0.2s"
+                _hover={{ transform: 'scale(1.05)', boxShadow: 'xl' }}
+              >
+                <Heading as="h3" size="md" mb="4">
+                  Weather Dashboard
+                </Heading>
+                <Text mb="4">This project uses server side API to build a weather dashboard. It should enable use to retrive weather forcaste by searching specific city.</Text>
+                <HStack spacing={4}>
+                  <Link href="https://wendyydxiao.github.io/module6challenge-weatherdashboard/" isExternal >
+                    <Icon as={FaExternalLinkAlt} w={6} h={6} color="white"/>
+                  </Link>
+                  <Link href="https://github.com/Wendyydxiao/module6challenge-weatherdashboard" isExternal>
+                    <Icon as={FaGithub} w={6} h={6} color="white" />
+                  </Link>
+                </HStack>
+              </Box>
             </SimpleGrid>
           </Container>
         );
@@ -182,17 +240,33 @@ const App = () => {
             <Heading as="h2" size="xl" mb="6" color="teal.500">
               Resume
             </Heading>
-            <Text>Download my resume and check out my proficiencies below.</Text>
-            <ul>
-              <li>HTML</li>
-              <li>CSS</li>
-              <li>JavaScript</li>
-              <li>React</li>
-              <li>Node.js</li>
-              <li>Express</li>
-              <li>MongoDB</li>
-              <li>Postgres SQL</li>
-            </ul>
+            <Text mb="2">
+              <Link href="https://conasems-ava-prod.s3.sa-east-1.amazonaws.com/aulas/ava/dummy-1641923583.pdf" color="teal.500" isExternal download>
+                Download
+              </Link> 
+              {' '}my resume and check out my proficiencies below.
+            </Text>
+            <SimpleGrid columns={[1, 2]} spacing={10} mt="8" mb="8">
+              <Box>
+                <Heading as="h3" size="md" mb="4">Frontend Proficiencies:</Heading>
+                <ul>
+                  <li>HTML</li>
+                  <li>CSS</li>
+                  <li>JavaScript</li>
+                  <li>React</li>
+                </ul>
+              </Box>
+
+              <Box>
+                <Heading as="h3" size="md" mb="4">Backend Proficiencies:</Heading>
+                <ul>
+                  <li>Node.js</li>
+                  <li>Express</li>
+                  <li>MongoDB</li>
+                  <li>PostgreSQL</li>
+                </ul>
+              </Box>
+            </SimpleGrid>
           </Container>
         );
       default:
