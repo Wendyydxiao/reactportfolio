@@ -5,6 +5,7 @@ import {
   Heading,
   Text,
   Image,
+  Link,
   SimpleGrid,
   FormControl,
   FormLabel,
@@ -63,7 +64,7 @@ const App = () => {
             <Image
               borderRadius="full"
               boxSize="150px"
-              src="/Assets/profile.png"
+              src="https://scontent.fsyd3-2.fna.fbcdn.net/v/t39.30808-6/308668353_6187090554640687_5155759867749710168_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=0ccMS5qz-1IQ7kNvgGZARk2&_nc_zt=23&_nc_ht=scontent.fsyd3-2.fna&_nc_gid=ABYDiFa1rVsS8h9CUTRR6pZ&oh=00_AYCHgHHIGJ2UNYIS5m1tbyVscxh5FxFcIn_73DcjtfY7OA&oe=671BFDE6"
               alt="Profile Pic"
               mb="6"
               border="3px solid teal"
@@ -85,11 +86,21 @@ const App = () => {
                 boxShadow="lg"
                 textAlign="center"
                 maxW="300px"
+                transition="transform 0.2s, box-shadow 0.2s"
+                _hover={{ transform: 'scale(1.05)', boxShadow: 'xl' }}
               >
                 <Heading as="h3" size="md" mb="4">
                   Project 1
                 </Heading>
                 <Text>Project description goes here...</Text>
+                <Box>
+                  <Link href="https://cinejournal-webapp.onrender.com/" color="white" isExternal mr="4">
+                    Live Page
+                  </Link>
+                  <Link href="https://github.com/kevinvongmany/cinejournal-webapp" color="white" isExternal>
+                    GitHub Repo
+                  </Link>
+                </Box>
               </Box>
               <Box
                 bg="orange.300"
@@ -177,7 +188,10 @@ const App = () => {
               <li>CSS</li>
               <li>JavaScript</li>
               <li>React</li>
-              {/* Add more proficiencies here */}
+              <li>Node.js</li>
+              <li>Express</li>
+              <li>MongoDB</li>
+              <li>Postgres SQL</li>
             </ul>
           </Container>
         );
