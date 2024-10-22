@@ -7,7 +7,7 @@ Being a web developer means being part of a community. We’ll need a place not 
 This is a personal portfolio built with **React** and styled using **Chakra UI**. The portfolio showcases your projects, provides information about you, contact form and professional resume to set you ready for new opportunities and challenges. The page is deployed to Netlify.
 
 - Live page link: https://peppy-narwhal-0fc3b9.netlify.app
-- Screenshot(s):
+- Screenshot(s): <br><br>
   <img src="./Assets/Homepage.png" width="400" title="page screenshot">
 
 ## Table of Contents
